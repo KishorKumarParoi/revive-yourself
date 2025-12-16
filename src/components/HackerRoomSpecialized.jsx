@@ -12,7 +12,7 @@ import { useGLTF, Merged } from '@react-three/drei'
 const context = createContext()
 
 export function Instances({ children, ...props }) {
-    const { nodes } = useGLTF('../../public/Hacker-Room-Stylized/scene.gltf')
+    const { nodes } = useGLTF('/Hacker-Room-Stylized/scene.gltf')
     const instances = useMemo(
         () => ({
             Computercomputermat: nodes.computer_computer_mat_0,
