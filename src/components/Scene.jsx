@@ -3,7 +3,6 @@ import { Canvas } from '@react-three/fiber'
 import { Suspense, useRef, useEffect, useState } from 'react'
 import { Instances, Model } from './HackerRoomSpecialized.jsx'
 import CanvasLoader from './CanvasLoader.jsx'
-import { Scroll, Search, SearchIcon } from 'lucide-react'
 
 const Scene = () => {
     const canvasRef = useRef(null)
@@ -16,18 +15,41 @@ const Scene = () => {
             if (!scrollEnabled && canvasRef.current?.contains(e.target)) {
                 e.preventDefault()
 
-                // Zoom functionality
+                // Zoom functionality using OrbitControls methods
                 if (orbitControlsRef.current) {
-                    const delta = e.deltaY > 0 ? 1.1 : 0.9
-                    const currentDistance = orbitControlsRef.current.getDistance()
-                    const newDistance = currentDistance * delta
+                    const zoomSpeed = 0.1
+                    const direction = e.deltaY > 0 ? 1 : -1
+
+                    // Get current camera position and target
+                    const camera = orbitControlsRef.current.object
+                    const target = orbitControlsRef.current.target
+
+                    // Calculate direction vector from target to camera
+                    const dx = camera.position.x - target.x
+                    const dy = camera.position.y - target.y
+                    const dz = camera.position.z - target.z
+
+                    // Calculate current distance
+                    const currentDistance = Math.sqrt(dx * dx + dy * dy + dz * dz)
+
+                    // Calculate new distance
+                    const newDistance = currentDistance + direction * zoomSpeed * currentDistance
 
                     // Clamp between min and max distance
                     const minDistance = 80
                     const maxDistance = 400
                     const clampedDistance = Math.max(minDistance, Math.min(maxDistance, newDistance))
 
-                    orbitControlsRef.current.dollyTo(clampedDistance / currentDistance, true)
+                    // Calculate zoom factor
+                    const zoomFactor = clampedDistance / currentDistance
+
+                    // Update camera position
+                    camera.position.x = target.x + dx * zoomFactor
+                    camera.position.y = target.y + dy * zoomFactor
+                    camera.position.z = target.z + dz * zoomFactor
+
+                    // Update controls
+                    orbitControlsRef.current.update()
                 }
             }
         }
@@ -68,7 +90,7 @@ const Scene = () => {
 
                     <PerspectiveCamera
                         makeDefault
-                        position={[-100, 200, 200]}
+                        position={[-100, 200, 250]}
                         fov={90}
                         near={0.1}
                         far={10000}
@@ -78,7 +100,7 @@ const Scene = () => {
                         ref={orbitControlsRef}
                         autoRotate
                         autoRotateSpeed={2}
-                        enableZoom={!scrollEnabled}  // Enable zoom when scroll is disabled
+                        enableZoom={false}  // Disabled - we handle zoom manually
                         enablePan={true}
                         enableDamping={true}
                         dampingFactor={0.05}
@@ -86,7 +108,7 @@ const Scene = () => {
                         maxDistance={400}
                         target={[0, 20, 0]}
                         rotateSpeed={1}
-                        zoomSpeed={1}
+                        zoomSpeed={0}
                         panSpeed={1}
                     />
 
@@ -127,7 +149,7 @@ const Scene = () => {
                 {/* Scroll Toggle Button */}
                 <button
                     onClick={toggleScrollZoom}
-                    className={`w-full px-4 py-3 rounded-lg font-medium text-sm transition-all duration-300 flex items-center justify-center gap-2 border text-white ${scrollEnabled
+                    className={`w-full px-4 py-3 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 border ${scrollEnabled
                         ? 'bg-green-500 bg-opacity-20 border-green-400 text-green-400 hover:bg-opacity-30'
                         : 'bg-blue-500 bg-opacity-20 border-blue-400 text-blue-400 hover:bg-opacity-30'
                         }`}
@@ -151,12 +173,12 @@ const Scene = () => {
             </div>
 
             {/* Navigation Buttons */}
-            <div className='absolute bottom-10 right-10 z-10 flex gap-3 '>
+            <div className='absolute bottom-10 right-10 z-10 flex gap-3'>
 
                 {/* Scroll Up Button */}
                 <button
                     onClick={scrollToPreviousSection}
-                    className='bg-cyan-500 bg-opacity-20 border border-cyan-400  hover:bg-opacity-30 px-4 py-3 rounded-lg transition-all duration-300 flex items-center gap-2 text-white'
+                    className='bg-cyan-500 bg-opacity-20 border border-cyan-400 text-cyan-400 hover:bg-opacity-30 px-4 py-3 rounded-lg transition-all duration-300 flex items-center gap-2'
                     title='Go to Hero Section'
                 >
                     <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
@@ -168,7 +190,7 @@ const Scene = () => {
                 {/* Scroll Down Button */}
                 <button
                     onClick={scrollToNextSection}
-                    className='bg-fuchsia-500 bg-opacity-20 border border-fuchsia-400 hover:bg-opacity-30 px-4 py-3 rounded-lg transition-all duration-300 flex items-center gap-2 text-white'
+                    className='bg-fuchsia-500 bg-opacity-20 border border-fuchsia-400 text-fuchsia-400 hover:bg-opacity-30 px-4 py-3 rounded-lg transition-all duration-300 flex items-center gap-2'
                     title='Go to About Section'
                 >
                     <span className='hidden sm:inline text-sm font-semibold'>Down</span>
@@ -180,16 +202,14 @@ const Scene = () => {
 
             {/* Scroll Status Indicator */}
             {!scrollEnabled && (
-                <div className='absolute top-10 right-10 z-10 bg-blue-500 bg-opacity-20 border border-blue-400 px-4 py-2 rounded-lg text-sm font-medium text-white animate-pulse'>
-                    <SearchIcon className='w-4 h-4 inline-block mr-2 mb-1 mx-auto' />
-                    Zoom Mode Active
+                <div className='absolute top-10 right-10 z-10 bg-blue-500 bg-opacity-20 border border-blue-400 text-blue-400 px-4 py-2 rounded-lg text-sm font-semibold animate-pulse'>
+                    🔍 Zoom Mode Active
                 </div>
             )}
 
             {scrollEnabled && (
-                <div className='absolute top-10 right-10 z-10 bg-green-500 bg-opacity-20 border border-green-400 px-4 py-2 rounded-lg text-sm font-medium text-white animate-pulse'>
-                    <Scroll className='w-4 h-4 inline-block mr-2 mb-1 mx-auto' />
-                    Page Scrolling Active
+                <div className='absolute top-10 right-10 z-10 bg-green-500 bg-opacity-20 border border-green-400 text-green-400 px-4 py-2 rounded-lg text-sm font-semibold animate-pulse'>
+                    ✓ Page Scrolling Active
                 </div>
             )}
         </div>
