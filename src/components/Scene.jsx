@@ -106,7 +106,7 @@ const Scene = () => {
                         enableDamping={true}
                         dampingFactor={0.05}
                         minDistance={80}
-                        maxDistance={400}
+                        maxDistance={300}
                         target={[0, 20, 0]}
                         rotateSpeed={1}
                         zoomSpeed={0}
@@ -174,31 +174,56 @@ const Scene = () => {
             </div>
 
             {/* Navigation Buttons */}
-            <div className='absolute bottom-10 right-10 z-10 flex gap-3'>
+            <div className='absolute bottom-10 right-10 z-10 flex gap-4'>
 
-                {/* Scroll Up Button */}
+                {/* Scroll Up Button - Cyan to Blue linear */}
                 <button
                     onClick={scrollToPreviousSection}
-                    className='bg-cyan-500 bg-opacity-20 border border-cyan-400 text-cyan-50 hover:bg-opacity-30 px-4 py-3 rounded-lg transition-all duration-300 flex items-center gap-2'
+                    className='group relative px-6 py-3 rounded-full font-bold text-sm transition-all duration-500 flex items-center gap-2 bg-linear-to-br from-cyan-500 via-blue-500 to-blue-600 text-white shadow-2xl shadow-cyan-500/50 hover:shadow-cyan-500/100 hover:scale-110 active:scale-95 overflow-hidden'
                     title='Go to Hero Section'
                 >
-                    <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M5 10l7-7m0 0l7 7m-7-7v18' />
-                    </svg>
-                    <span className='hidden sm:inline text-sm font-semibold'>Up</span>
+                    {/* Animated Glow Background */}
+                    <div className='absolute inset-0 bg-linear-to-r from-cyan-400 via-blue-400 to-blue-500 opacity-0 group-hover:opacity-40 transition-opacity duration-500 blur-lg -z-10'></div>
+
+                    {/* Shine Effect */}
+                    <div className='absolute -inset-1 bg-linear-to-r from-cyan-300 via-blue-300 to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-300 blur-sm -z-10'></div>
+
+                    {/* Content - Stays Visible */}
+                    <div className='relative z-20 flex items-center gap-2'>
+                        <svg className='w-5 h-5 group-hover:-translate-y-1 transition-transform duration-300 text-white group-hover:text-cyan-100' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2.5} d='M5 15l7-7 7 7' />
+                        </svg>
+                        <span className='hidden sm:inline text-sm font-bold group-hover:tracking-wider transition-all duration-300 uppercase text-white group-hover:text-cyan-100'>Up</span>
+                    </div>
+
+                    {/* Border linear Animation */}
+                    <div className='absolute inset-0 rounded-full border-2 border-cyan-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10'></div>
                 </button>
 
-                {/* Scroll Down Button */}
+                {/* Scroll Down Button - Magenta to Purple linear */}
                 <button
                     onClick={scrollToNextSection}
-                    className='bg-fuchsia-500 bg-opacity-20 border border-fuchsia-400 text-fuchsia-50 hover:bg-opacity-30 px-4 py-3 rounded-lg transition-all duration-300 flex items-center gap-2'
+                    className='group relative px-6 py-3 rounded-full font-bold text-sm transition-all duration-500 flex items-center gap-2 bg-linear-to-br from-fuchsia-500 via-pink-400 to-indigo-600 text-white shadow-2xl shadow-fuchsia-500/50 hover:shadow-fuchsia-500/100 hover:scale-110 active:scale-95 overflow-hidden'
                     title='Go to About Section'
                 >
-                    <span className='hidden sm:inline text-sm font-semibold'>Down</span>
-                    <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M19 14l-7 7m0 0l-7-7m7 7V3' />
-                    </svg>
+                    {/* Animated Glow Background */}
+                    <div className='absolute inset-0 bg-linear-to-r from-fuchsia-400 via-pink-400 to-purple-500 opacity-0 group-hover:opacity-40 transition-opacity duration-500 blur-lg -z-10'></div>
+
+                    {/* Shine Effect */}
+                    <div className='absolute -inset-1 bg-linear-to-r from-fuchsia-300 via-pink-300 to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-300 blur-sm -z-10'></div>
+
+                    {/* Content - Stays Visible */}
+                    <div className='relative z-20 flex items-center gap-2'>
+                        <span className='hidden sm:inline text-sm font-bold group-hover:tracking-wider transition-all duration-300 uppercase text-white group-hover:text-fuchsia-100'>Down</span>
+                        <svg className='w-5 h-5 group-hover:translate-y-1 transition-transform duration-300 text-white group-hover:text-fuchsia-100' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2.5} d='M19 9l-7 7-7-7' />
+                        </svg>
+                    </div>
+
+                    {/* Border linear Animation */}
+                    <div className='absolute inset-0 rounded-full border-2 border-fuchsia-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10'></div>
                 </button>
+
             </div>
 
             {/* Scroll Status Indicator */}

@@ -1,10 +1,14 @@
 import { useRef } from 'react'
 import Hero from './components/Hero'
 import Scene from './components/Scene'
+import Scene2 from './components/Scene2'
+import Scene3 from './components/Scene3'
 
 const App = () => {
   const sceneRef = useRef(null)
   const aboutRef = useRef(null)
+  const scene2Ref = useRef(null)
+  const scene3Ref = useRef(null)
 
   return (
     <main className="w-full">
@@ -21,7 +25,6 @@ const App = () => {
         <Scene />
       </section>
 
-      {/* <section className='min-h-screen relative'></section> */}
 
       {/* About / Other Sections */}
       <section
@@ -34,6 +37,23 @@ const App = () => {
             Your content here...
           </p>
         </div>
+      </section>
+
+      <section
+        ref={scene2Ref}
+        className="relative w-full min-h-screen flex justify-center items-center">
+        <Scene2 />
+      </section>
+
+      <section className='min-h-screen relative'>
+        kkp
+      </section>
+
+
+      <section
+        ref={scene3Ref}
+        className="relative w-full min-h-screen flex justify-center items-center">
+        <Scene3 />
       </section>
     </main>
   )
