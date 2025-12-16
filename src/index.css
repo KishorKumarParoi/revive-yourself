@@ -169,7 +169,7 @@
   }
 
   .tech-logo {
-    @apply w-10 h-10 rounded-md p-2 bg-neutral-100 opacity-10 backdrop-filter backdrop-blur-lg flex justify-center items-center;
+    @apply w-10 h-10 rounded-md p-2 bg-neutral-100 opacity-20 backdrop-filter backdrop-blur-lg flex justify-center items-center;
   }
 
   .client-container {
@@ -271,12 +271,12 @@
   .btn-secondary {
     @apply px-8 py-3 rounded-lg font-semibold transition-all duration-300 border-2;
     border-image: linear-gradient(135deg, #00d4ff 0%, #ff006e 100%) 1;
-    @apply text-white hover:bg-white hover:bg-opacity-10 hover:scale-105;
+    @apply text-white hover:bg-white hover:opacity-20 hover:scale-105;
   }
 
   /* Card styles */
   .card-glass {
-    @apply backdrop-blur-md bg-white bg-opacity-10 border border-white border-opacity-20 rounded-2xl p-6 transition-all duration-300 hover:bg-opacity-20;
+    @apply backdrop-blur-md bg-white opacity-20 border border-white opacity-20 rounded-2xl p-6 transition-all duration-300 hover:opacity-20;
   }
 
   .card-dark {
