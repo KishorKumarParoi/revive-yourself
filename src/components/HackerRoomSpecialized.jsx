@@ -75,6 +75,6 @@ export function Model(props) {
     )
 }
 
-useGLTF.preload('../../public/Hacker-Room-Stylized/scene.gltf')
+useGLTF.preload('/Hacker-Room-Stylized/scene.gltf')
 
 
