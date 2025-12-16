@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber'
 import { Suspense, useRef, useEffect, useState } from 'react'
 import { Instances, Model } from './HackerRoomSpecialized.jsx'
 import CanvasLoader from './CanvasLoader.jsx'
+import { Scroll, SearchIcon } from 'lucide-react'
 
 const Scene = () => {
     const canvasRef = useRef(null)
@@ -150,8 +151,8 @@ const Scene = () => {
                 <button
                     onClick={toggleScrollZoom}
                     className={`w-full px-4 py-3 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 border ${scrollEnabled
-                        ? 'bg-green-500 bg-opacity-20 border-green-400 text-green-400 hover:bg-opacity-30'
-                        : 'bg-blue-500 bg-opacity-20 border-blue-400 text-blue-400 hover:bg-opacity-30'
+                        ? 'bg-green-500 bg-opacity-20 border-green-400 text-green-50 hover:bg-opacity-30'
+                        : 'bg-blue-500 bg-opacity-20 border-blue-400 text-blue-50 hover:bg-opacity-30'
                         }`}
                 >
                     {scrollEnabled ? (
@@ -178,7 +179,7 @@ const Scene = () => {
                 {/* Scroll Up Button */}
                 <button
                     onClick={scrollToPreviousSection}
-                    className='bg-cyan-500 bg-opacity-20 border border-cyan-400 text-cyan-400 hover:bg-opacity-30 px-4 py-3 rounded-lg transition-all duration-300 flex items-center gap-2'
+                    className='bg-cyan-500 bg-opacity-20 border border-cyan-400 text-cyan-50 hover:bg-opacity-30 px-4 py-3 rounded-lg transition-all duration-300 flex items-center gap-2'
                     title='Go to Hero Section'
                 >
                     <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
@@ -190,7 +191,7 @@ const Scene = () => {
                 {/* Scroll Down Button */}
                 <button
                     onClick={scrollToNextSection}
-                    className='bg-fuchsia-500 bg-opacity-20 border border-fuchsia-400 text-fuchsia-400 hover:bg-opacity-30 px-4 py-3 rounded-lg transition-all duration-300 flex items-center gap-2'
+                    className='bg-fuchsia-500 bg-opacity-20 border border-fuchsia-400 text-fuchsia-50 hover:bg-opacity-30 px-4 py-3 rounded-lg transition-all duration-300 flex items-center gap-2'
                     title='Go to About Section'
                 >
                     <span className='hidden sm:inline text-sm font-semibold'>Down</span>
@@ -202,14 +203,16 @@ const Scene = () => {
 
             {/* Scroll Status Indicator */}
             {!scrollEnabled && (
-                <div className='absolute top-10 right-10 z-10 bg-blue-500 bg-opacity-20 border border-blue-400 text-blue-400 px-4 py-2 rounded-lg text-sm font-semibold animate-pulse'>
-                    🔍 Zoom Mode Active
+                <div className='absolute top-10 right-10 z-10 bg-blue-500 bg-opacity-20 border border-blue-800 text-blue-50 px-4 py-2 rounded-lg text-sm font-semibold animate-pulse'>
+                    <SearchIcon className='w-4 h-4 inline-block mr-1 mb-1' />
+                    Zoom Mode Active
                 </div>
             )}
 
             {scrollEnabled && (
-                <div className='absolute top-10 right-10 z-10 bg-green-500 bg-opacity-20 border border-green-400 text-green-400 px-4 py-2 rounded-lg text-sm font-semibold animate-pulse'>
-                    ✓ Page Scrolling Active
+                <div className='absolute top-10 right-10 z-10 bg-green-500 bg-opacity-20 border border-green-500 text-green-50 px-4 py-2 rounded-lg text-sm font-semibold animate-pulse'>
+                    <Scroll className='w-4 h-4 inline-block mr-1 mb-1' />
+                    Page Scrolling Active
                 </div>
             )}
         </div>

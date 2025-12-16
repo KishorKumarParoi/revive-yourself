@@ -16,7 +16,7 @@ const App = () => {
       {/* 3D Scene Section */}
       <section
         ref={sceneRef}
-        className="relative w-full h-screen bg-black-100 flex items-center justify-center"
+        className="relative w-full h-screen flex items-center justify-center"
       >
         <Scene />
       </section>
