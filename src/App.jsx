@@ -1,37 +1,42 @@
-import { useRef } from 'react'
+import React from 'react'
+import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import Scene from './components/Scene'
-import Scene2 from './components/Scene2'
-import Scene3 from './components/Scene3'
-import Scene4 from './components/Scene4'
-import Hacker from './components/Hacker'
-import Other from './components/Other'
+import HackerCockpit from './components/HackerCockpit'
+import HackerTerminal from './components/HackerTerminal'
+import ProjectsSection from './components/ProjectsSection'
+import ExperienceSection from './components/ExperienceSection'
+import SkillsSection from './components/SkillsSection'
+import ContactSection from './components/ContactSection'
 
 const App = () => {
-  const aboutRef = useRef(null)
-  const hackerRef = useRef(null)
-
   return (
-    <main className="w-full">
-      {/* Hero Section */}
-      <section className="relative w-full min-h-screen">
-        <Hero aboutRef={aboutRef} />
-      </section>
+    <div className="relative min-h-screen w-full bg-[#030308] text-white selection:bg-cyan-500 selection:text-black">
+      {/* Fixed Cyberpunk Navigation Bar with Audio Synthesizer */}
+      <Navbar />
 
-      <section
-        ref={hackerRef}
-        className="relative w-full h-screen flex items-center justify-center"
-      >
-        <Hacker />
-      </section>
+      <main className="relative z-10 flex flex-col w-full">
+        {/* Hero Section */}
+        <Hero />
 
-      <section className='min-h-screen relative flex justify-center items-center '>
-        Kumar
-      </section>
+        {/* 3D Hacker Room Cockpit Canvas */}
+        <HackerCockpit />
 
-      {/* <Other /> */}
+        {/* Interactive Hacker Terminal */}
+        <HackerTerminal />
 
-    </main>
+        {/* Flagship Production Architectures Showcase */}
+        <ProjectsSection />
+
+        {/* Career Timeline & Experience */}
+        <ExperienceSection />
+
+        {/* Technical Arsenal & Core Pillars */}
+        <SkillsSection />
+
+        {/* Secure Uplink & Transmission */}
+        <ContactSection />
+      </main>
+    </div>
   )
 }
 
