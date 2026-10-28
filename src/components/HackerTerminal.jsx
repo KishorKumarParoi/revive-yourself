@@ -6,7 +6,7 @@ const HackerTerminal = () => {
   const [inputVal, setInputVal] = useState('')
   const [copied, setCopied] = useState(false)
   const [isMatrixMode, setIsMatrixMode] = useState(false)
-  const terminalEndRef = useRef(null)
+  const terminalBodyRef = useRef(null)
 
   const initialHistory = [
     {
@@ -40,6 +40,7 @@ const HackerTerminal = () => {
   • metrics   : Production benchmarks (<0.5ms SIMD, 35M+ Lakehouse)
   • exp       : Career timeline (phi0.ai, Samsung AI Core, kepi.ai, foodpanda)
   • projects  : Production architectures list (Zomato, Anime, KoomAI)
+  • journey   : 38-Module AI Engineering Master Curriculum & Platform Governance
   • skills    : Technical competencies matrix & low-level frameworks
   • koom      : Deep-dive into KoomAI video platform ($24K MRR)
   • matrix    : Toggle digital green hacker rain mode
@@ -119,6 +120,21 @@ Competitive: Codeforces Rank 232 Div-2 (Blue Coder) • 5★ CodeChef • 1000+ 
         })
         break
 
+      case 'journey':
+      case 'curriculum':
+      case 'roadmap':
+        newHistory.push({
+          type: 'output',
+          text: `🎓 38-MODULE AI ENGINEERING MASTER CURRICULUM (Codified at GitHub / AI-Engineering):
+  [Phase I]   Foundations & Retrieval : Git Hygiene, Prompt Eng, Embeddings, Naive to Production RAG, Contrastive Loss, RRF
+  [Phase II]  Agents & State Machines : LangGraph Cyclic Graphs, Postgres Memory, Multi-Agent Teams, Open DeepResearch, On-Prem
+  [Phase III] Eval, Fine-Tuning & DBs : Synthetic Data, RAGAS Metrics, QLoRA Reasoning, Qdrant Hybrid HNSW+BM25, FlashRank ONNX
+  [Phase IV]  Production & Cloud MLOps: vLLM Endpoints, Semantic Caching, Multimodal Nemotron+Mistral OCR, Airflow, SageMaker DAGs
+  [Phase V]   Platform & Governance   : FastMCP Contracts, HITL Break-Glass, Zero-Trust BotShield WAF, Terraform IaC, ArgoCD
+  [Flagships] 13 Production Repos     : AI_Security, Chatbot, Data-Agent, Nexus-AI, Advanced_ETL, JobHunter, Zomato-Lakehouse`,
+        })
+        break
+
       case 'skills':
         newHistory.push({
           type: 'output',
@@ -193,10 +209,12 @@ Competitive: Codeforces Rank 232 Div-2 (Blue Coder) • 5★ CodeChef • 1000+ 
   }
 
   useEffect(() => {
-    terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    if (terminalBodyRef.current) {
+      terminalBodyRef.current.scrollTop = terminalBodyRef.current.scrollHeight
+    }
   }, [history])
 
-  const quickCommands = ['whoami', 'metrics', 'exp', 'projects', 'skills', 'koom', 'contact', 'clear']
+  const quickCommands = ['whoami', 'metrics', 'exp', 'projects', 'journey', 'skills', 'koom', 'contact', 'clear']
 
   return (
     <section id="terminal" className="relative w-full py-20 px-4 sm:px-6 lg:px-8 bg-[#020205] overflow-hidden">
@@ -266,7 +284,7 @@ Competitive: Codeforces Rank 232 Div-2 (Blue Coder) • 5★ CodeChef • 1000+ 
           </div>
 
           {/* Terminal Body */}
-          <div className="p-4 sm:p-6 font-mono text-xs sm:text-sm h-[380px] overflow-y-auto space-y-3 leading-relaxed select-text">
+          <div ref={terminalBodyRef} className="p-4 sm:p-6 font-mono text-xs sm:text-sm h-[380px] overflow-y-auto space-y-3 leading-relaxed select-text scroll-smooth">
             {history.map((item, idx) => (
               <div key={idx}>
                 {item.type === 'system' && (
@@ -287,7 +305,6 @@ Competitive: Codeforces Rank 232 Div-2 (Blue Coder) • 5★ CodeChef • 1000+ 
                 )}
               </div>
             ))}
-            <div ref={terminalEndRef} />
           </div>
 
           {/* Terminal Command Input Prompt */}
@@ -300,7 +317,6 @@ Competitive: Codeforces Rank 232 Div-2 (Blue Coder) • 5★ CodeChef • 1000+ 
               onKeyDown={handleKeyDown}
               placeholder="type 'help' or any command..."
               className="w-full bg-transparent border-none outline-none text-cyan-300 placeholder-gray-600 font-mono text-xs sm:text-sm"
-              autoFocus
             />
             <button
               onClick={() => handleCommand(inputVal)}
