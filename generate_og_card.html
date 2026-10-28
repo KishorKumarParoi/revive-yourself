@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1200px;
+    height: 630px;
+    background: #030308;
+    font-family: "Fira Code", monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(6, 182, 212, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(6, 182, 212, 0.08) 1px, transparent 1px);
+    background-size: 28px 28px;
+    z-index: 1;
+  }
+  .glow-cyan {
+    position: absolute;
+    top: -60px;
+    left: -60px;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.24) 0%, transparent 70%);
+    z-index: 1;
+  }
+  .glow-purple {
+    position: absolute;
+    bottom: -60px;
+    right: 280px;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, transparent 70%);
+    z-index: 1;
+  }
+  .card-container {
+    position: relative;
+    z-index: 10;
+    width: 1160px;
+    height: 590px;
+    border: 1.5px solid rgba(6, 182, 212, 0.45);
+    background: rgba(7, 9, 22, 0.96);
+    border-radius: 12px;
+    display: flex;
+    padding: 24px 28px;
+    box-shadow: 0 0 45px rgba(6, 182, 212, 0.22), inset 0 0 30px rgba(6, 182, 212, 0.04);
+    gap: 22px;
+  }
+  .left-col {
+    flex: 1.18;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #38bdf8;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .eyebrow-dot {
+    width: 7px;
+    height: 7px;
+    background: #06b6d4;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #06b6d4;
+  }
+  .name {
+    font-family: "Inter", sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.05;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #ffffff 60%, #a5f3fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .headline-box {
+    background: rgba(6, 182, 212, 0.07);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    border-left: 3.5px solid #06b6d4;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 11.2px;
+    line-height: 1.4;
+    color: #cbd5e1;
+    margin-bottom: 8px;
+  }
+  .hl-cyan { color: #38bdf8; font-weight: 700; }
+  .hl-emerald { color: #34d399; font-weight: 700; }
+  .hl-purple { color: #c084fc; font-weight: 700; }
+  .hl-sep { color: #475569; margin: 0 3px; }
+
+  .subhead {
+    font-size: 11.5px;
+    color: #94a3b8;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .subhead .dot { color: #06b6d4; }
+
+  .project-showcase-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .proj-card {
+    background: rgba(15, 23, 42, 0.9);
+    border: 1.2px solid rgba(6, 182, 212, 0.4);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.5);
+  }
+  .proj-header {
+    background: rgba(6, 182, 212, 0.14);
+    border-bottom: 1px solid rgba(6, 182, 212, 0.25);
+    padding: 5px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .proj-tag {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #38bdf8;
+    letter-spacing: 0.03em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .proj-tag::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #06b6d4;
+    box-shadow: 0 0 6px #06b6d4;
+  }
+  .proj-badge {
+    font-size: 9px;
+    background: rgba(168, 85, 247, 0.25);
+    border: 1px solid rgba(168, 85, 247, 0.5);
+    color: #d8b4fe;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+  .proj-img-wrap {
+    height: 136px;
+    position: relative;
+    overflow: hidden;
+    background: #0a0d18;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+  }
+  .proj-img-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+  .proj-desc {
+    padding: 5px 8px;
+    font-size: 10px;
+    color: #cbd5e1;
+    line-height: 1.35;
+    background: rgba(10, 14, 28, 0.98);
+    border-top: 1px solid rgba(6, 182, 212, 0.2);
+  }
+
+  .specs-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 12px;
+    font-size: 10.5px;
+    color: #cbd5e1;
+    margin-bottom: 4px;
+  }
+  .specs-list li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .specs-list li::before {
+    content: "▸";
+    color: #06b6d4;
+    font-weight: bold;
+  }
+
+  .cyber-nav {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin-top: 6px;
+  }
+  .nav-chip {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(15, 23, 42, 0.7);
+    color: #94a3b8;
+    white-space: nowrap;
+  }
+  .nav-chip.active {
+    border-color: #06b6d4;
+    background: rgba(6, 182, 212, 0.18);
+    color: #38bdf8;
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+  }
+  .nav-chip .chip-label {
+    color: #64748b;
+    font-size: 8.5px;
+    text-transform: uppercase;
+  }
+
+  .right-col {
+    width: 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .photo-frame {
+    width: 310px;
+    height: 486px;
+    border: 1.5px solid rgba(6, 182, 212, 0.45);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    background: #020205;
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.15);
+  }
+  .photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .photo-status {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(3, 7, 18, 0.88);
+    border: 1px solid rgba(34, 197, 94, 0.5);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    color: #4ade80;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(4px);
+  }
+  .pulse-green {
+    width: 6px;
+    height: 6px;
+    background: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #22c55e;
+  }
+  .photo-badge-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: linear-gradient(to top, rgba(2,2,5,0.95) 45%, transparent);
+    padding: 20px 12px 10px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .badge-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #e2e8f0;
+    font-family: "Inter", sans-serif;
+  }
+  .badge-tag {
+    font-size: 9px;
+    color: #38bdf8;
+    background: rgba(6, 182, 212, 0.2);
+    border: 1px solid rgba(6, 182, 212, 0.4);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+  .bottom-telemetry {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 9.5px;
+    color: #64748b;
+    display: flex;
+    justify-content: space-between;
+  }
+  .bottom-telemetry span { color: #38bdf8; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="glow-cyan"></div>
+  <div class="glow-purple"></div>
+
+  <div class="card-container">
+    <div class="left-col">
+      <div>
+        <div class="eyebrow">
+          <div class="eyebrow-dot"></div>
+          <span>3D Hacker Cockpit // Architecture Telemetry</span>
+        </div>
+        <h1 class="name">Kishor Kumar Paroi</h1>
+
+        <div class="headline-box">
+          <span class="hl-cyan">AI Systems Architect</span>
+          <span class="hl-sep">|</span>
+          <span>(Dev/ML/LLM/AI)Ops</span>
+          <span class="hl-sep">|</span>
+          <span class="hl-emerald">Founder@KoomAI</span>
+          <span class="hl-sep">|</span>
+          <span>FDE(LangGraph, K8s, GCP, RAG&lt;35ms, Mesh)</span>
+          <span class="hl-sep">|</span>
+          <span>vLLM, Finetune</span>
+          <span class="hl-sep">|</span>
+          <span>Data Eng(Azure, AWS, Snowflake)</span>
+          <span class="hl-sep">|</span>
+          <span class="hl-purple">Rust SIMD</span>
+        </div>
+
+        <div class="subhead">
+          <span>Founder @ KoomAI</span>
+          <span class="dot">•</span>
+          <span>B.Sc. CSE @ RUET (483rd)</span>
+          <span class="dot">•</span>
+          <span>Global Remote / Ex-Enterprise Lead</span>
+        </div>
+
+        <!-- Featured Project Previews with Architecture Images -->
+        <div class="project-showcase-grid">
+          <!-- Project 1: KoomAI WebRTC Video Engine -->
+          <div class="proj-card">
+            <div class="proj-header">
+              <span class="proj-tag">KoomAI WebRTC Engine</span>
+              <span class="proj-badge">&lt;120ms SFU</span>
+            </div>
+            <div class="proj-img-wrap">
+              <img src="file:///Users/kishorkumarparoi/Desktop/FIVERR_PORTFOLIO_ASSETS/08_KoomAI_WebRTC_Video_Engine_SaaS/cover.jpg" alt="KoomAI Architecture">
+            </div>
+            <div class="proj-desc">
+              Rust Media Pipeline &amp; Selective Forwarding Unit Mesh
+            </div>
+          </div>
+
+          <!-- Project 2: Hybrid Anime Intelligence -->
+          <div class="proj-card">
+            <div class="proj-header">
+              <span class="proj-tag">Hybrid Anime Recommender</span>
+              <span class="proj-badge">Sub-35ms</span>
+            </div>
+            <div class="proj-img-wrap">
+              <img src="file:///Users/kishorkumarparoi/Desktop/Hybrid-Anime-Recommender/docs/images/01_architecture_overview.jpg" alt="Hybrid Anime Architecture">
+            </div>
+            <div class="proj-desc">
+              Kafka + Qdrant HNSW + FlashRank + Multi-LoRA vLLM
+            </div>
+          </div>
+        </div>
+
+        <ul class="specs-list">
+          <li>Three.js 3D Interactive Cyber Room</li>
+          <li>Sub-35ms HNSW Vector Search Engine</li>
+          <li>Bare-Metal SIMD AVX-512 in Rust</li>
+          <li>38-Module AI Engineering Master Plan</li>
+        </ul>
+      </div>
+
+      <!-- Ecosystem Nav Chips -->
+      <div class="cyber-nav">
+        <div class="nav-chip active">
+          <span>⚡ hacker.kishor.tech</span>
+        </div>
+        <div class="nav-chip">
+          <span class="chip-label">Main:</span>
+          <span>kishor.tech</span>
+        </div>
+        <div class="nav-chip">
+          <span class="chip-label">macOS:</span>
+          <span>macos.kishor.tech</span>
+        </div>
+        <div class="nav-chip">
+          <span class="chip-label">3D:</span>
+          <span>3d.kishor.tech</span>
+        </div>
+        <div class="nav-chip">
+          <span class="chip-label">AI:</span>
+          <span>koom.tech</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Avatar Photo & Live Terminal Telemetry -->
+    <div class="right-col">
+      <div class="photo-frame">
+        <div class="photo-status">
+          <div class="pulse-green"></div>
+          <span>SYSTEM ONLINE</span>
+        </div>
+        <img src="file:///Users/kishorkumarparoi/job-project/vantage-portfolio/kishor.jpg" alt="Kishor Kumar Paroi">
+        <div class="photo-badge-bottom">
+          <div>
+            <div class="badge-title">Kishor Kumar Paroi</div>
+            <div style="font-size: 9px; color: #94a3b8;">Principal AI Systems Architect</div>
+          </div>
+          <div class="badge-tag">ROOT</div>
+        </div>
+      </div>
+      <div class="bottom-telemetry">
+        <div>STATUS: <span>ACTIVE</span></div>
+        <div>REGION: <span>GLOBAL</span></div>
+        <div>LATENCY: <span>&lt;35MS</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
