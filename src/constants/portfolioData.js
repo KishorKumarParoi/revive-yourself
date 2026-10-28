@@ -4,9 +4,10 @@ export const navLinks = [
   { id: 3, name: "Terminal", href: "#terminal" },
   { id: 4, name: "Telemetry", href: "#metrics" },
   { id: 5, name: "Architectures", href: "#projects" },
-  { id: 6, name: "Experience", href: "#experience" },
-  { id: 7, name: "Skills Matrix", href: "#skills" },
-  { id: 8, name: "Uplink", href: "#contact" },
+  { id: 6, name: "AI Journey", href: "#journey" },
+  { id: 7, name: "Experience", href: "#experience" },
+  { id: 8, name: "Skills Matrix", href: "#skills" },
+  { id: 9, name: "Uplink", href: "#contact" },
 ];
 
 export const executiveBio = {

@@ -6,6 +6,7 @@ import HackerTerminal from './components/HackerTerminal'
 import ProjectsSection from './components/ProjectsSection'
 import ExperienceSection from './components/ExperienceSection'
 import SkillsSection from './components/SkillsSection'
+import HackerJourneySection from './components/HackerJourneySection'
 import ContactSection from './components/ContactSection'
 
 const App = () => {
@@ -26,6 +27,9 @@ const App = () => {
 
         {/* Flagship Production Architectures Showcase */}
         <ProjectsSection />
+
+        {/* 38-Module AI Engineering Learning Journey */}
+        <HackerJourneySection />
 
         {/* Career Timeline & Experience */}
         <ExperienceSection />
