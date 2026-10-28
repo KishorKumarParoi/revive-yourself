@@ -32,12 +32,30 @@
 ### **Executive 3D Cyber Workstation & Production Dossier**
 *Crafted with Three.js, React Three Fiber, GSAP, and TailwindCSS v4*
 
-[![Live Portfolio](https://img.shields.io/badge/Live%20Platform-kishor.tech-0071e3?style=for-the-badge&logo=apple&logoColor=white)](https://kishor.tech/)
+[![Live Platform](https://img.shields.io/badge/Live%20Platform-kishor.tech-0071e3?style=for-the-badge&logo=apple&logoColor=white)](https://kishor.tech/)
 [![3D Experience](https://img.shields.io/badge/3D%20Re--Invent-3d.kishor.tech-ff9900?style=for-the-badge&logo=three.js&logoColor=white)](https://3d.kishor.tech/)
+[![Hacker Cockpit](https://img.shields.io/badge/Hacker%20Cockpit-hacker.kishor.tech-008080?style=for-the-badge&logo=gnubash&logoColor=white)](https://hacker.kishor.tech/)
 [![Koom-AI](https://img.shields.io/badge/Koom--AI-koom.kishor.tech-7928ca?style=for-the-badge&logo=vercel&logoColor=white)](https://koom.kishor.tech/)
-[![Resume PDF](https://img.shields.io/badge/📄%20Executive%20Resume-Download%20PDF-641C26?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](/files/resume.pdf)
+[![Executive Resume](https://img.shields.io/badge/📄%20Executive%20Resume-1--Page%20(ATS%20100)-641C26?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://kishor.tech/resume.pdf)
+[![ATS Resume](https://img.shields.io/badge/📑%20ATS%20Resume-2--Page%20(ATS%20100)-1a1a1a?style=for-the-badge&logo=files&logoColor=white)](https://kishor.tech/resume_single_column.pdf)
 [![GitHub](https://img.shields.io/badge/GitHub-KishorKumarParoi%2Frevive--yourself-24292e?style=for-the-badge&logo=github&logoColor=white)](https://github.com/KishorKumarParoi/revive-yourself)
 [![License](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)](LICENSE)
+
+</div>
+
+---
+
+## 🌐 Live Digital Ecosystem
+
+| Platform | URL | Architecture Highlights |
+|:---|:---|:---|
+| 🎓 **Kishor.tech (Main Academic Portfolio)** | **[kishor.tech](https://kishor.tech)** | Minimalist academic layout, sub-35ms Hybrid RAG, 38-module AI curriculum |
+| 💻 **macos-portfolio (Desktop Environment)** | **[macos.kishor.tech](https://macos.kishor.tech)** | Interactive desktop OS emulator with draggable windows, dock, and terminal CLI |
+| 🧊 **3d (Interactive 3D WebGL Platform)** | **[3d.kishor.tech](https://3d.kishor.tech)** | React 19.2, Rolldown Vite, Tailwind v4, GSAP 3.13 camera choreography |
+| ⚡ **hacker (3D Cyber Hacker Workstation)** | **[hacker.kishor.tech](https://hacker.kishor.tech)** | 3D Cyber Hacker command room, CRT monitor shaders, Web Audio, terminal HUD |
+| ▶ **KoomAI Video Intelligence** | **[koom.kishor.tech](https://koom.kishor.tech)** | Sub-120ms WebRTC SVC engine, Electron native capture, 20-agent LangGraph copilot |
+| 💼 **LinkedIn Network** | **[linkedin.com/in/kishor-kumar-paroi-b06344166](https://linkedin.com/in/kishor-kumar-paroi-b06344166)** | Verified professional network and leadership updates |
+| 🐙 **GitHub Repositories** | **[github.com/KishorKumarParoi](https://github.com/KishorKumarParoi)** | 11 production systems with 1-click cloud bootstrap scripts |
 
 </div>
 
@@ -88,11 +106,12 @@ npm run build
 
 ---
 
-## 📜 Verified Dossiers
+## 📜 Verified Dossiers (ATS Score: 100/100)
 
-- [📥 Executive 1-Page Academic PDF](/files/resume.pdf)
-- [📥 Comprehensive Single-Column ATS PDF](/files/resume_single_column.pdf)
-- [🌐 Live macOS Portfolio: kishor.tech](https://kishor.tech)
+- [📥 Executive 1-Page Academic PDF (ATS 100)](https://kishor.tech/resume.pdf) &bull; [Local Mirror](/files/resume.pdf)
+- [📥 Comprehensive 2-Page Single-Column ATS PDF (ATS 100)](https://kishor.tech/resume_single_column.pdf) &bull; [Local Mirror](/files/resume_single_column.pdf)
+- [🌐 Live Academic Portfolio: kishor.tech](https://kishor.tech)
+- [💻 macOS Sonoma Desktop Environment: macos.kishor.tech](https://macos.kishor.tech)
 - [⚡ 3D Re-Invent Experience: 3d.kishor.tech](https://3d.kishor.tech)
 - [🚀 Koom-AI Screen Platform: koom.kishor.tech](https://koom.kishor.tech)
 
