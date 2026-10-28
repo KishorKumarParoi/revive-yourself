@@ -212,21 +212,29 @@ const ContactSection = () => {
         </div>
 
         {/* Bottom Footer Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-400 font-mono">
           <div>
             © 2026 <span className="text-white font-bold">Kishor Kumar Paroi</span>. Engineered with React 19, Three.js, GSAP & TailwindCSS v4.
           </div>
-          <div className="flex items-center gap-3">
-            <a href="https://kishor.tech" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition">
-              macOS Sonoma OS
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <a href="https://kishor.tech" target="_blank" rel="noopener noreferrer" className="hover:text-amber-400 transition flex items-center gap-1">
+              <span>🏛️</span>
+              <span>kishor.tech</span>
             </a>
             <span>•</span>
-            <a href="https://3d.kishor.tech" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition">
-              3D Re-Invent
+            <a href="https://macos.kishor.tech" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition flex items-center gap-1">
+              <span>🍎</span>
+              <span>macOS Sequoia</span>
             </a>
             <span>•</span>
-            <a href="https://koom.kishor.tech" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition">
-              KoomAI ($24K MRR)
+            <a href="https://koom.kishor.tech" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition flex items-center gap-1">
+              <span>⚡</span>
+              <span>Koom-AI</span>
+            </a>
+            <span>•</span>
+            <a href="https://3d.kishor.tech" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition flex items-center gap-1">
+              <span>🔮</span>
+              <span>3D Re-Invent</span>
             </a>
           </div>
         </div>

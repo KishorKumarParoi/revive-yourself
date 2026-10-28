@@ -5,6 +5,7 @@ import HackerCockpit from './components/HackerCockpit'
 import HackerTerminal from './components/HackerTerminal'
 import ProjectsSection from './components/ProjectsSection'
 import ExperienceSection from './components/ExperienceSection'
+import DossierSection from './components/DossierSection'
 import SkillsSection from './components/SkillsSection'
 import HackerJourneySection from './components/HackerJourneySection'
 import ContactSection from './components/ContactSection'
@@ -33,6 +34,9 @@ const App = () => {
 
         {/* Career Timeline & Experience */}
         <ExperienceSection />
+
+        {/* Production Dossier & 2-Page ATS Resume */}
+        <DossierSection />
 
         {/* Technical Arsenal & Core Pillars */}
         <SkillsSection />

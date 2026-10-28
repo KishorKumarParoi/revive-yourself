@@ -37,15 +37,49 @@ const HackerTerminal = () => {
           type: 'output',
           text: `AVAILABLE COMMANDS:
   • whoami    : Executive biography & background (RUET CSE Rank 483rd)
+  • dossier   : View & download 2-Page ATS Single-Column Resume & 1-Page CV
   • metrics   : Production benchmarks (<0.5ms SIMD, 35M+ Lakehouse)
   • exp       : Career timeline (phi0.ai, Samsung AI Core, kepi.ai, foodpanda)
   • projects  : Production architectures list (Zomato, Anime, KoomAI)
   • journey   : 38-Module AI Engineering Master Curriculum & Platform Governance
   • skills    : Technical competencies matrix & low-level frameworks
+  • macos     : Launch macOS Sequoia interactive desktop (macos.kishor.tech)
+  • main      : Launch Main Academic Portfolio (kishor.tech)
   • koom      : Deep-dive into KoomAI video platform ($24K MRR)
   • matrix    : Toggle digital green hacker rain mode
   • clear     : Wipe terminal display buffer
-  • contact   : Display direct WhatsApp, email & portfolio uplink`,
+  • contact   : Display direct WhatsApp, email & ecosystem portals`,
+        })
+        break
+
+      case 'dossier':
+      case 'resume':
+      case 'cv':
+        newHistory.push({
+          type: 'output',
+          text: `📄 PRODUCTION DOSSIER & VERIFIED CREDENTIALS:
+  • 2-Page ATS Clean Resume (PDF) : /files/resume_single_column.pdf
+  • 1-Page Executive CV (PDF)      : /files/resume.pdf
+  • Interactive Section            : Scroll to #dossier on this page for live PDF viewer!`,
+        })
+        break
+
+      case 'macos':
+        newHistory.push({
+          type: 'output',
+          text: `🍎 MACOS SEQUOIA DESKTOP EMULATOR:
+  • Live Portal : https://macos.kishor.tech
+  • Architecture: Authentic Apple desktop OS emulator with draggable windows, interactive dock & terminal CLI.`,
+        })
+        break
+
+      case 'main':
+      case 'kishor':
+        newHistory.push({
+          type: 'output',
+          text: `🏛️ MAIN ACADEMIC PORTFOLIO:
+  • Live Portal : https://kishor.tech
+  • Architecture: Minimalist academic layout, sub-35ms Hybrid RAG evaluation, and 38-module deep curriculum.`,
         })
         break
 
@@ -174,12 +208,15 @@ Competitive: Codeforces Rank 232 Div-2 (Blue Coder) • 5★ CodeChef • 1000+ 
       case 'contact':
         newHistory.push({
           type: 'output',
-          text: `DIRECT UPLINK CHANNELS:
-  • Email       : kishor.ruet.cse@gmail.com / 1703053@student.ruet.ac.bd
-  • WhatsApp    : +880 1724-714156
-  • Portfolio   : https://kishor.tech (macOS) | https://3d.kishor.tech (3D) | https://koom.kishor.tech
-  • LinkedIn    : https://linkedin.com/in/kishor-kumar-paroi-b06344166
-  • GitHub      : https://github.com/KishorKumarParoi`,
+          text: `DIRECT UPLINK CHANNELS & ECOSYSTEM PORTALS:
+  • Email          : kishor.ruet.cse@gmail.com / 1703053@student.ruet.ac.bd
+  • WhatsApp       : +880 1724-714156
+  • Main Academic  : https://kishor.tech
+  • macOS Sequoia  : https://macos.kishor.tech
+  • KoomAI Engine  : https://koom.kishor.tech
+  • 3D Experience  : https://3d.kishor.tech
+  • LinkedIn       : https://linkedin.com/in/kishor-kumar-paroi-b06344166
+  • GitHub         : https://github.com/KishorKumarParoi`,
         })
         break
 
@@ -214,7 +251,7 @@ Competitive: Codeforces Rank 232 Div-2 (Blue Coder) • 5★ CodeChef • 1000+ 
     }
   }, [history])
 
-  const quickCommands = ['whoami', 'metrics', 'exp', 'projects', 'journey', 'skills', 'koom', 'contact', 'clear']
+  const quickCommands = ['whoami', 'dossier', 'macos', 'main', 'koom', 'metrics', 'projects', 'journey', 'contact', 'clear']
 
   return (
     <section id="terminal" className="relative w-full py-20 px-4 sm:px-6 lg:px-8 bg-[#020205] overflow-hidden">

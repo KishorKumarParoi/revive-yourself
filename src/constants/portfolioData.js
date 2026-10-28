@@ -6,8 +6,48 @@ export const navLinks = [
   { id: 5, name: "Architectures", href: "#projects" },
   { id: 6, name: "AI Journey", href: "#journey" },
   { id: 7, name: "Experience", href: "#experience" },
-  { id: 8, name: "Skills Matrix", href: "#skills" },
-  { id: 9, name: "Uplink", href: "#contact" },
+  { id: 8, name: "Dossier // CV", href: "#dossier" },
+  { id: 9, name: "Skills Matrix", href: "#skills" },
+  { id: 10, name: "Uplink", href: "#contact" },
+];
+
+export const ecosystemPortals = [
+  {
+    id: "main",
+    name: "kishor.tech",
+    label: "Main Academic Portfolio",
+    sublabel: "Vintage Layout & Sub-35ms RAG",
+    href: "https://kishor.tech",
+    icon: "🏛️",
+    description: "Minimalist academic portfolio showcasing 38-module curriculum & sub-35ms RAG.",
+  },
+  {
+    id: "macos",
+    name: "macos.kishor.tech",
+    label: "macOS Sequoia OS",
+    sublabel: "Interactive Desktop Workstation",
+    href: "https://macos.kishor.tech",
+    icon: "🍎",
+    description: "Full desktop OS emulator with draggable windows, dock, and terminal CLI.",
+  },
+  {
+    id: "koom",
+    name: "koom.kishor.tech",
+    label: "Koom-AI Platform",
+    sublabel: "Sub-120ms WebRTC Video Intelligence",
+    href: "https://koom.kishor.tech",
+    icon: "⚡",
+    description: "Production video platform ($24K MRR), WebRTC SVC engine & 20-agent LangGraph copilot.",
+  },
+  {
+    id: "3d",
+    name: "3d.kishor.tech",
+    label: "3D Re-Invent",
+    sublabel: "Interactive WebGL Platform",
+    href: "https://3d.kishor.tech",
+    icon: "🔮",
+    description: "WebGL 3D space station experience with GSAP choreography and floating island.",
+  },
 ];
 
 export const executiveBio = {
@@ -23,7 +63,9 @@ export const executiveBio = {
   institutionalEmail: "1703053@student.ruet.ac.bd",
   whatsapp: "+880 1724-714156",
   portfolioUrl: "https://kishor.tech",
+  macosUrl: "https://macos.kishor.tech",
   reinventUrl: "https://3d.kishor.tech",
+  hackerUrl: "https://hacker.kishor.tech",
   koomUrl: "https://koom.kishor.tech",
   githubUrl: "https://github.com/KishorKumarParoi",
   linkedinUrl: "https://linkedin.com/in/kishor-kumar-paroi-b06344166",

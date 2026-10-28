@@ -103,29 +103,47 @@ const Navbar = () => {
               href="https://kishor.tech"
               target="_blank"
               rel="noopener noreferrer"
+              className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-600/20 hover:bg-amber-600/40 border border-amber-500/40 text-amber-300 text-xs font-mono font-semibold transition"
+              title="Launch Main Academic Portfolio (kishor.tech)"
+            >
+              <span>🏛️</span>
+              <span>kishor.tech</span>
+            </a>
+            <a
+              href="https://macos.kishor.tech"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-blue-600/20 hover:bg-blue-600/40 border border-blue-500/40 text-blue-300 text-xs font-mono font-semibold transition"
-              title="Launch macOS Sonoma Portfolio"
+              title="Launch macOS Sequoia Desktop Portfolio (macos.kishor.tech)"
             >
               <span>🍎</span>
               <span>macOS</span>
+            </a>
+            <a
+              href="https://koom.kishor.tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-pink-600/20 hover:bg-pink-600/40 border border-pink-500/40 text-pink-300 text-xs font-mono font-semibold transition"
+              title="Launch KoomAI Video Intelligence (koom.kishor.tech)"
+            >
+              <span>⚡</span>
+              <span>KoomAI</span>
             </a>
             <a
               href="https://3d.kishor.tech"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-purple-600/20 hover:bg-purple-600/40 border border-purple-500/40 text-purple-300 text-xs font-mono font-semibold transition"
-              title="Launch 3D Re-Invent Experience"
+              title="Launch 3D Re-Invent Experience (3d.kishor.tech)"
             >
-              <span>⚡</span>
+              <span>🔮</span>
               <span>3D</span>
             </a>
           </div>
 
-          {/* Master Resume PDF Button */}
+          {/* Master Resume PDF / Dossier Section Jump Button */}
           <a
-            href="/files/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#dossier"
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-bold text-xs font-mono tracking-wider shadow-[0_0_20px_rgba(0,212,255,0.4)] transition duration-200"
           >
             <Download className="size-3.5" />
@@ -144,7 +162,7 @@ const Navbar = () => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#05050c]/98 border-b border-cyan-500/30 px-5 py-4 space-y-2 backdrop-blur-2xl animate-in slide-in-from-top-3">
+        <div className="lg:hidden bg-[#05050c]/98 border-b border-cyan-500/30 px-5 py-4 space-y-3 backdrop-blur-2xl animate-in slide-in-from-top-3">
           <div className="grid grid-cols-2 gap-2 pb-3 border-b border-white/10">
             {navLinks.map((link) => (
               <a
@@ -157,25 +175,50 @@ const Navbar = () => {
               </a>
             ))}
           </div>
-          <div className="flex items-center justify-between pt-2">
-            <a
-              href="https://kishor.tech"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs font-mono text-cyan-400 flex items-center gap-1"
-            >
-              <span>🍎 macOS Portfolio</span>
-              <ExternalLink className="size-3" />
-            </a>
-            <a
-              href="https://3d.kishor.tech"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs font-mono text-purple-400 flex items-center gap-1"
-            >
-              <span>⚡ 3D Re-Invent</span>
-              <ExternalLink className="size-3" />
-            </a>
+
+          {/* Mobile Ecosystem Directory */}
+          <div className="space-y-1.5 pt-1">
+            <span className="text-[10px] font-mono text-gray-400 uppercase tracking-widest block">
+              Digital Ecosystem Portals:
+            </span>
+            <div className="grid grid-cols-2 gap-2">
+              <a
+                href="https://kishor.tech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-2.5 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono flex items-center justify-between"
+              >
+                <span>🏛️ kishor.tech</span>
+                <ExternalLink className="size-3" />
+              </a>
+              <a
+                href="https://macos.kishor.tech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-2.5 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-mono flex items-center justify-between"
+              >
+                <span>🍎 macOS Portfolio</span>
+                <ExternalLink className="size-3" />
+              </a>
+              <a
+                href="https://koom.kishor.tech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-2.5 py-1.5 rounded-lg bg-pink-500/10 border border-pink-500/30 text-pink-300 text-xs font-mono flex items-center justify-between"
+              >
+                <span>⚡ Koom-AI</span>
+                <ExternalLink className="size-3" />
+              </a>
+              <a
+                href="https://3d.kishor.tech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-2.5 py-1.5 rounded-lg bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-mono flex items-center justify-between"
+              >
+                <span>🔮 3D Re-Invent</span>
+                <ExternalLink className="size-3" />
+              </a>
+            </div>
           </div>
         </div>
       )}

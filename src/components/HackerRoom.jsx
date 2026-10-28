@@ -39,3 +39,5 @@ export default function HackerRoom(props) {
 }
 
 useGLTF.preload('/models/hacker-room.glb');
+useTexture.preload('textures/desk/monitor.png');
+useTexture.preload('textures/desk/screen.png');

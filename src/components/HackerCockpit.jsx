@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useRef } from 'react'
+import React, { Suspense, useState, useRef, useEffect } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { PerspectiveCamera, OrbitControls, Float, Sphere, MeshDistortMaterial } from '@react-three/drei'
 import HackerRoom from './HackerRoom'
@@ -44,7 +44,22 @@ const CyberPlasmaNode = () => {
 const HackerCockpit = () => {
   const [cameraView, setCameraView] = useState('default') // default | desk | cinematic
   const [autoRotate, setAutoRotate] = useState(true)
+  const [isInView, setIsInView] = useState(true)
   const controlsRef = useRef(null)
+  const sectionRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting)
+      },
+      { threshold: 0.05 }
+    )
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+    return () => observer.disconnect()
+  }, [])
 
   const cameraPresets = {
     default: { pos: [0, 5, 15], target: [0, 0, 0], fov: 65 },
@@ -65,17 +80,24 @@ const HackerCockpit = () => {
   }
 
   return (
-    <section id="cockpit" className="relative w-full h-screen min-h-[700px] bg-black overflow-hidden flex flex-col justify-between">
+    <section
+      id="cockpit"
+      ref={sectionRef}
+      className="relative w-full h-screen min-h-[700px] bg-black overflow-hidden flex flex-col justify-between"
+    >
       {/* 3D Canvas */}
       <div className="absolute inset-0 w-full h-full">
         <Canvas
           className="w-full h-full"
+          frameloop={isInView ? 'always' : 'never'}
           gl={{
             antialias: true,
-            alpha: true,
+            alpha: false,
             powerPreference: 'high-performance',
+            stencil: false,
+            depth: true,
           }}
-          dpr={[1, 2]}
+          dpr={[1, 1.5]}
         >
           <Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera

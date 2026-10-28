@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { executiveBio, productionMetrics } from '../constants/portfolioData'
-import { Terminal, Shield, ArrowDown, ExternalLink, Download, Cpu, Sparkles, Activity, Layers } from 'lucide-react'
+import { executiveBio, productionMetrics, ecosystemPortals } from '../constants/portfolioData'
+import { Terminal, Shield, ArrowDown, ExternalLink, Download, Cpu, Sparkles, Activity, Layers, FileText } from 'lucide-react'
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('')
@@ -71,10 +71,10 @@ const Hero = () => {
         </p>
 
         {/* Primary Call to Action Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8">
           <a
             href="#cockpit"
-            className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-mono font-bold text-sm tracking-wider shadow-[0_0_30px_rgba(0,212,255,0.5)] transition duration-200 transform hover:-translate-y-0.5"
+            className="flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-mono font-bold text-xs sm:text-sm tracking-wider shadow-[0_0_30px_rgba(0,212,255,0.5)] transition duration-200 transform hover:-translate-y-0.5"
           >
             <Cpu className="size-4" />
             <span>ENTER 3D COCKPIT</span>
@@ -82,20 +82,72 @@ const Hero = () => {
 
           <a
             href="#terminal"
-            className="flex items-center gap-2 px-6 py-3 rounded-xl bg-black/60 hover:bg-black/90 text-cyan-300 hover:text-white border border-cyan-500/40 hover:border-cyan-400 font-mono font-semibold text-sm tracking-wider shadow-[0_0_20px_rgba(0,0,0,0.8)] transition duration-200 transform hover:-translate-y-0.5"
+            className="flex items-center gap-2 px-5 py-3 rounded-xl bg-black/60 hover:bg-black/90 text-cyan-300 hover:text-white border border-cyan-500/40 hover:border-cyan-400 font-mono font-semibold text-xs sm:text-sm tracking-wider shadow-[0_0_20px_rgba(0,0,0,0.8)] transition duration-200 transform hover:-translate-y-0.5"
           >
             <Terminal className="size-4 text-cyan-400" />
             <span>RUN TERMINAL SHELL</span>
           </a>
 
           <a
+            href="#dossier"
+            className="flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-500 hover:to-pink-500 text-white font-mono font-bold text-xs sm:text-sm tracking-wider shadow-[0_0_25px_rgba(255,0,128,0.4)] transition duration-200 transform hover:-translate-y-0.5"
+          >
+            <FileText className="size-4" />
+            <span>DOSSIER // 2-PAGE ATS</span>
+          </a>
+
+          <a
             href="/files/resume_single_column.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 hover:border-white/20 font-mono text-sm transition"
+            download="Kishor_Kumar_Paroi_ATS_Resume.pdf"
+            className="flex items-center gap-2 px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 hover:border-white/20 font-mono text-xs sm:text-sm transition"
           >
             <Download className="size-4 text-pink-400" />
-            <span>ATS RESUME PDF</span>
+            <span>DOWNLOAD ATS PDF</span>
+          </a>
+        </div>
+
+        {/* Quick Ecosystem Cross-Link Pills */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-10 font-mono text-xs">
+          <span className="text-gray-500 text-[11px] mr-1">Ecosystem:</span>
+          <a
+            href="https://kishor.tech"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-amber-500/10 hover:bg-amber-500/25 border border-amber-500/30 text-amber-300 transition"
+          >
+            <span>🏛️</span>
+            <span className="font-semibold">kishor.tech</span>
+            <ExternalLink className="size-3 text-amber-400/60" />
+          </a>
+          <a
+            href="https://macos.kishor.tech"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-blue-500/10 hover:bg-blue-500/25 border border-blue-500/30 text-blue-300 transition"
+          >
+            <span>🍎</span>
+            <span className="font-semibold">macos.kishor.tech</span>
+            <ExternalLink className="size-3 text-blue-400/60" />
+          </a>
+          <a
+            href="https://koom.kishor.tech"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-pink-500/10 hover:bg-pink-500/25 border border-pink-500/30 text-pink-300 transition"
+          >
+            <span>⚡</span>
+            <span className="font-semibold">koom.kishor.tech</span>
+            <ExternalLink className="size-3 text-pink-400/60" />
+          </a>
+          <a
+            href="https://3d.kishor.tech"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-purple-500/10 hover:bg-purple-500/25 border border-purple-500/30 text-purple-300 transition"
+          >
+            <span>🔮</span>
+            <span className="font-semibold">3d.kishor.tech</span>
+            <ExternalLink className="size-3 text-purple-400/60" />
           </a>
         </div>
 
