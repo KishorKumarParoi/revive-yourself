@@ -86,7 +86,7 @@ const HackerCockpit = () => {
       className="relative w-full h-screen min-h-[700px] bg-black overflow-hidden flex flex-col justify-between"
     >
       {/* 3D Canvas */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-full" style={{ touchAction: 'pan-y' }}>
         <Canvas
           className="w-full h-full"
           frameloop={isInView ? 'always' : 'never'}
@@ -112,8 +112,8 @@ const HackerCockpit = () => {
               ref={controlsRef}
               autoRotate={autoRotate}
               autoRotateSpeed={1.8}
-              enableZoom={true}
-              enablePan={true}
+              enableZoom={false}
+              enablePan={false}
               enableDamping={true}
               dampingFactor={0.06}
               minDistance={4}
