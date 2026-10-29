@@ -12,11 +12,11 @@ import ContactSection from './components/ContactSection'
 
 const App = () => {
   return (
-    <div className="relative min-h-screen w-full bg-[#030308] text-white selection:bg-cyan-500 selection:text-black">
+    <div className="relative min-h-screen w-full max-w-full overflow-x-hidden bg-[#030308] text-white selection:bg-cyan-500 selection:text-black">
       {/* Fixed Cyberpunk Navigation Bar with Audio Synthesizer */}
       <Navbar />
 
-      <main className="relative z-10 flex flex-col w-full">
+      <main className="relative z-10 flex flex-col w-full max-w-full overflow-x-hidden">
         {/* Hero Section */}
         <Hero />
 

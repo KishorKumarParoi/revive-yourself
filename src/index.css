@@ -55,16 +55,22 @@
 }
 
 @layer base {
-  * {
+  *, *::before, *::after {
+    box-sizing: border-box;
     scroll-behavior: smooth;
   }
 
   html {
     scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   body {
     @apply text-white overflow-x-hidden relative;
+    width: 100%;
+    max-width: 100%;
     background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 30%, #2d1b4e 60%, #0f0f2e 100%);
     background-attachment: fixed;
     font-family: 'General Sans', sans-serif;
