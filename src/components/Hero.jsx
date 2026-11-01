@@ -87,12 +87,13 @@ const Hero = () => {
           </a>
 
           <a
-            href="/files/pitch_deck.pptx"
-            download="Kishor_Kumar_Paroi_10000_Dollar_Executive_Deck.pptx"
+            href="https://pptx.kishor.tech"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-black font-mono font-extrabold text-xs sm:text-sm tracking-wider shadow-[0_0_25px_rgba(245,158,11,0.5)] transition duration-200 transform hover:-translate-y-0.5 border border-yellow-300"
           >
             <Presentation className="size-4" />
-            <span>💎 $10K PITCH DECK (.PPTX)</span>
+            <span>💎 $10K PITCH DECK (pptx.kishor.tech)</span>
           </a>
 
           <a

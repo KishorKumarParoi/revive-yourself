@@ -156,13 +156,14 @@ const Navbar = () => {
             <span className="hidden sm:inline">REEL</span>
           </a>
           <a
-            href="/files/pitch_deck.pptx"
-            download="Kishor_Kumar_Paroi_10000_Dollar_Executive_Deck.pptx"
+            href="https://pptx.kishor.tech"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-black font-bold text-xs font-mono tracking-wider shadow-[0_0_15px_rgba(245,158,11,0.3)] transition duration-200 shrink-0 whitespace-nowrap"
-            title="Download $10,000 Executive Pitch Deck (.pptx)"
+            title="Open $10,000 Executive Pitch Deck (pptx.kishor.tech)"
           >
             <span>💎</span>
-            <span className="hidden sm:inline">$10K DECK</span>
+            <span className="hidden sm:inline">$10K DECK ↗</span>
           </a>
 
           {/* Master Resume PDF / Dossier Section Jump Button */}
