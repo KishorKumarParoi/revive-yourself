@@ -144,6 +144,27 @@ const Navbar = () => {
             </a>
           </div>
 
+          {/* Reel & Deck Buttons */}
+          <a
+            href="https://www.youtube.com/watch?v=mqX-2FW3o0Q"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-gradient-to-r from-rose-600 to-red-600 hover:from-rose-500 hover:to-red-500 text-white font-bold text-xs font-mono tracking-wider shadow-[0_0_15px_rgba(244,63,94,0.4)] transition duration-200 shrink-0 whitespace-nowrap animate-pulse"
+            title="Watch $1.4M Production Reel on YouTube"
+          >
+            <span>🎬</span>
+            <span className="hidden sm:inline">REEL</span>
+          </a>
+          <a
+            href="/files/pitch_deck.pptx"
+            download="Kishor_Kumar_Paroi_10000_Dollar_Executive_Deck.pptx"
+            className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-black font-bold text-xs font-mono tracking-wider shadow-[0_0_15px_rgba(245,158,11,0.3)] transition duration-200 shrink-0 whitespace-nowrap"
+            title="Download $10,000 Executive Pitch Deck (.pptx)"
+          >
+            <span>💎</span>
+            <span className="hidden sm:inline">$10K DECK</span>
+          </a>
+
           {/* Master Resume PDF / Dossier Section Jump Button */}
           <a
             href="#dossier"

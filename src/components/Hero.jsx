@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { executiveBio, productionMetrics, ecosystemPortals } from '../constants/portfolioData'
-import { Terminal, Shield, ArrowDown, ExternalLink, Download, Cpu, Sparkles, Activity, Layers, FileText } from 'lucide-react'
+import { Terminal, Shield, ArrowDown, ExternalLink, Download, Cpu, Sparkles, Activity, Layers, FileText, Play, Presentation } from 'lucide-react'
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('')
@@ -72,6 +72,29 @@ const Hero = () => {
 
         {/* Primary Call to Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8">
+          <a
+            href="https://www.youtube.com/watch?v=mqX-2FW3o0Q"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-pink-600 hover:from-red-500 hover:to-pink-500 text-white font-mono font-extrabold text-xs sm:text-sm tracking-wider shadow-[0_0_35px_rgba(225,29,72,0.6)] transition duration-200 transform hover:-translate-y-1 hover:scale-105 border border-red-400/60 animate-pulse"
+          >
+            <span className="flex h-2.5 w-2.5 relative">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+            </span>
+            <Play className="size-4 fill-white text-white" />
+            <span>🔥 WATCH $1.4M REEL (YOUTUBE)</span>
+          </a>
+
+          <a
+            href="/files/pitch_deck.pptx"
+            download="Kishor_Kumar_Paroi_10000_Dollar_Executive_Deck.pptx"
+            className="flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-black font-mono font-extrabold text-xs sm:text-sm tracking-wider shadow-[0_0_25px_rgba(245,158,11,0.5)] transition duration-200 transform hover:-translate-y-0.5 border border-yellow-300"
+          >
+            <Presentation className="size-4" />
+            <span>💎 $10K PITCH DECK (.PPTX)</span>
+          </a>
+
           <a
             href="#cockpit"
             className="flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-mono font-bold text-xs sm:text-sm tracking-wider shadow-[0_0_30px_rgba(0,212,255,0.5)] transition duration-200 transform hover:-translate-y-0.5"
