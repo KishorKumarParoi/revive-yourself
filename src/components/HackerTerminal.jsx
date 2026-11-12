@@ -150,7 +150,9 @@ Competitive: Codeforces Rank 232 Div-2 (Blue Coder) • 5★ CodeChef • 1000+ 
   [08] Nexus-AI Lakehouse        : CQRS, Kafka Transactional Outbox, S3 Glacier archiving
   [09] AWS SageMaker Pipelines   : Distributed Horovod multi-GPU training & Canary endpoints
   [10] Autonomous Chatbot        : LangGraph multi-turn cyclic reflection with self-healing critic
-  ... [Run project title for deeper technical inspect]`,
+  [11] Omnichannel Voice SaaS    : Vapi Squad, Deepgram Nova-2 (<180ms), FastAPI, Cartesia Sonic-3.5 (<500ms)
+  [12] Nimbus 5-Agent Suite      : LiveKit WebRTC, GPT-4o/Whisper, ElevenLabs Turbo v2.5 (<400ms)
+  ... [Inspect project cards above for live links & deep architecture]`,
         })
         break
 
@@ -212,6 +214,8 @@ Competitive: Codeforces Rank 232 Div-2 (Blue Coder) • 5★ CodeChef • 1000+ 
   • Email          : kishor.ruet.cse@gmail.com / 1703053@student.ruet.ac.bd
   • WhatsApp       : +880 1724-714156
   • Main Academic  : https://kishor.tech
+  • Omnichannel AI : https://ai-voice-receptionist.kishor.tech
+  • Nimbus Suite   : https://nimbus.kishor.tech
   • macOS Sequoia  : https://macos.kishor.tech
   • KoomAI Engine  : https://koom.kishor.tech
   • 3D Experience  : https://3d.kishor.tech

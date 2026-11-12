@@ -142,8 +142,9 @@ const DossierSection = () => {
                       <span>Verified Industry Roles</span>
                     </h4>
                     <ul className="space-y-1.5 text-gray-400 text-[11.5px]">
+                      <li>• <strong>Omnichannel AI Solutions:</strong> Live sub-500ms WebRTC voice &amp; 8+ channel SaaS receptionist (<a href="https://ai-voice-receptionist.kishor.tech/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">ai-voice-receptionist.kishor.tech</a>).</li>
                       <li>• <strong>phi0.ai:</strong> Forward Deployed AI Engineer (5 LangGraph cyclic agents, 99.4% completion, sub-35ms Hybrid RAG).</li>
-                      <li>• <strong>Samsung AI Core / Care Health:</strong> Data Engineering & AI Systems Intern (PySpark streaming, 70B LLM FlashAttention-2, 3.8x throughput).</li>
+                      <li>• <strong>Samsung AI Core / Care Health:</strong> Data Engineering &amp; AI Systems Intern (PySpark streaming, 70B LLM FlashAttention-2, 3.8x throughput).</li>
                       <li>• <strong>kepi.ai:</strong> Senior Full Stack Engineer (Zero-downtime EKS migration, Redis Streams, 15M+ daily async tasks).</li>
                     </ul>
                   </div>
@@ -191,6 +192,8 @@ const DossierSection = () => {
                       <span>Flagship Production Blueprints</span>
                     </h4>
                     <ul className="space-y-1 text-gray-400 text-[11.5px]">
+                      <li>• <strong>Omnichannel AI Receptionist:</strong> Sub-500ms WebRTC voice (<a href="https://ai-voice-receptionist.kishor.tech/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">Live SaaS</a>) + 8+ webhooks + Neon PG &amp; GCal OAuth2.</li>
+                      <li>• <strong>Nimbus-AI 5-Agent Suite:</strong> Sub-400ms LiveKit WebRTC Cloud (<a href="https://nimbus.kishor.tech/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">nimbus.kishor.tech</a>) across 5 live portals.</li>
                       <li>• <strong>Zomato AI Lakehouse:</strong> 35M+ orders, 42% warehouse compute cut ($18K/mo), $1.2M dispute fraud eliminated.</li>
                       <li>• <strong>Hybrid Anime Intelligence:</strong> Rust SIMD scoring &lt;0.5ms (50x speedup), NDCG@10 = 0.94, vLLM Multi-LoRA.</li>
                       <li>• <strong>AI Security Production Gateway:</strong> NeMo guardrails, PyRIT red-teaming, 95%+ jailbreak interception.</li>
